@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 03, 2019 at 05:39 AM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.3.6
+-- Host: localhost:3306
+-- Generation Time: Jul 25, 2025 at 01:28 AM
+-- Server version: 8.0.30
+-- PHP Version: 8.2.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,27 +18,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `website_sekolah`
+-- Database: `morvin_school`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `admin`
---
-
-CREATE TABLE `admin` (
-  `id` int(11) NOT NULL,
-  `username` varchar(200) NOT NULL,
-  `password` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `admin`
---
-
-INSERT INTO `admin` (`id`, `username`, `password`) VALUES
-(1, 'admin', '$2y$10$6BnDUB1E594ZPdy7rSjOpe5fgBAzXzThRh31o5H5lNQKQgUdqlwte');
 
 -- --------------------------------------------------------
 
@@ -48,7 +28,7 @@ INSERT INTO `admin` (`id`, `username`, `password`) VALUES
 --
 
 CREATE TABLE `berita` (
-  `id` int(100) NOT NULL,
+  `id` int NOT NULL,
   `judul_berita` varchar(200) NOT NULL,
   `isi_berita` varchar(2000) NOT NULL,
   `gambar` varchar(200) NOT NULL
@@ -71,7 +51,7 @@ INSERT INTO `berita` (`id`, `judul_berita`, `isi_berita`, `gambar`) VALUES
 --
 
 CREATE TABLE `blog` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `judul_blog` varchar(200) NOT NULL,
   `isi_blog` varchar(2000) NOT NULL,
   `gambar` varchar(200) NOT NULL
@@ -95,7 +75,7 @@ INSERT INTO `blog` (`id`, `judul_blog`, `isi_blog`, `gambar`) VALUES
 --
 
 CREATE TABLE `eskul` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `eskul` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -122,7 +102,7 @@ INSERT INTO `eskul` (`id`, `eskul`) VALUES
 --
 
 CREATE TABLE `galeri` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `galeri` varchar(200) NOT NULL,
   `keterangan` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -133,18 +113,19 @@ CREATE TABLE `galeri` (
 
 INSERT INTO `galeri` (`id`, `galeri`, `keterangan`) VALUES
 (1, '5dbe4e381c288.jpeg', 'Guru Terbaik'),
-(2, '5dbd3c2573b5b.jpg', 'Gedung Megah'),
+(2, '688287f8d397e.jpeg', 'Gedung Megah'),
 (3, '5dbd3c844f56f.jpeg', 'Siswa Rapi'),
 (4, '5dbd3c8c8310e.jpeg', 'Militeran'),
 (5, '5dbd3c963df04.jpg', 'Conference'),
-(6, '5dbd3ca13842f.jpeg', 'Gedung Indah'),
+(6, '688288088d050.jpeg', 'Gedung Indah'),
 (8, '5dbd3eead28c9.jpg', 'Guru TerbaikSedunia'),
 (9, '5dbd3ef231167.jpg', 'Gedung Indah'),
 (10, '5dbd3efad600a.jpg', 'Gedung Indah'),
 (11, '5dbd3f03e19a4.jpg', 'Gedung Indah'),
 (12, '5dbd3f0d9cd5c.jpeg', 'Gedung Indah'),
 (13, '5dbd3f1b4a38b.jpg', 'Gedung Indah'),
-(14, '5dbd3f244d008.jpeg', 'Siswa Keren');
+(14, '5dbd3f244d008.jpeg', 'Siswa Keren'),
+(17, '687dc090a9625.png', 'adawd');
 
 -- --------------------------------------------------------
 
@@ -153,7 +134,7 @@ INSERT INTO `galeri` (`id`, `galeri`, `keterangan`) VALUES
 --
 
 CREATE TABLE `guru` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `guru` varchar(200) NOT NULL,
   `foto` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -179,7 +160,7 @@ INSERT INTO `guru` (`id`, `guru`, `foto`) VALUES
 --
 
 CREATE TABLE `home` (
-  `id` int(100) NOT NULL,
+  `id` int NOT NULL,
   `judul_slogan` varchar(200) NOT NULL,
   `isi_slogan` varchar(200) NOT NULL,
   `gambar_slogan` varchar(200) NOT NULL
@@ -190,9 +171,9 @@ CREATE TABLE `home` (
 --
 
 INSERT INTO `home` (`id`, `judul_slogan`, `isi_slogan`, `gambar_slogan`) VALUES
-(1, 'Berkaryalah', 'Setiap Manusia Menginginkan Kesuksesan', '5dbd0a819466c.jpeg'),
-(2, 'Berkaryalah Untuk Sukses', 'Bahagiakan Orang Tua Mu', '5dbd0aa1bf87b.jpg'),
-(3, 'Sekolah Untuk Masa Depan Mu', 'Belajarlah Untuk Menjadi Juara', '5dbd0ac85e5f9.jpg'),
+(1, 'Berkaryalah', 'Setiap Manusia Menginginkan Kesuksesan', '68828726987e2.jpeg'),
+(2, 'Berkaryalah Untuk Sukses', 'Bahagiakan Orang Tua Mu', '6882877772b0c.jpeg'),
+(3, 'Sekolah Untuk Masa Depan Mu', 'Belajarlah Untuk Menjadi Juara', '68828741a09e3.jpeg'),
 (4, 'Semangat Walaupun Tidak Ada Yang Mendukungmu', 'Belajar Walau Engkau Dikenal Sebagai Anak Bodoh', '5dbd0af61dfaa.jpg');
 
 -- --------------------------------------------------------
@@ -202,7 +183,7 @@ INSERT INTO `home` (`id`, `judul_slogan`, `isi_slogan`, `gambar_slogan`) VALUES
 --
 
 CREATE TABLE `kepsek` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `nama` varchar(200) NOT NULL,
   `sambutan` varchar(500) NOT NULL,
   `foto_kepsek` varchar(200) NOT NULL
@@ -218,11 +199,35 @@ INSERT INTO `kepsek` (`id`, `nama`, `sambutan`, `foto_kepsek`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `pengaturan`
+--
+
+CREATE TABLE `pengaturan` (
+  `id_pengaturan` int NOT NULL,
+  `appname` varchar(100) NOT NULL,
+  `copyright` varchar(255) DEFAULT NULL,
+  `description` text,
+  `keywords` text,
+  `author` varchar(100) DEFAULT NULL,
+  `logo` varchar(255) DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `pengaturan`
+--
+
+INSERT INTO `pengaturan` (`id_pengaturan`, `appname`, `copyright`, `description`, `keywords`, `author`, `logo`, `updated_at`) VALUES
+(1, 'SMP 25 MAKASSAR', '&copy; 2025 My Company', 'Default application description', 'app, default', 'Admin', 'logo_1753393555.png', '2025-07-24 21:45:55');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `saranaprasarana`
 --
 
 CREATE TABLE `saranaprasarana` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `isi` varchar(2000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -249,7 +254,7 @@ INSERT INTO `saranaprasarana` (`id`, `isi`) VALUES
 --
 
 CREATE TABLE `sejarah` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `judul_sejarah` varchar(200) NOT NULL,
   `isi_sejarah` varchar(5000) NOT NULL,
   `gambar` varchar(200) NOT NULL
@@ -260,7 +265,7 @@ CREATE TABLE `sejarah` (
 --
 
 INSERT INTO `sejarah` (`id`, `judul_sejarah`, `isi_sejarah`, `gambar`) VALUES
-(1, 'Sejarah Smk Muhammadiyah Wanasari', 'Berdiri sejak tahun 1975 semula adalah SMPP35 menjadi SMA Negeri 78 sejak tahun 1984 Sekolah yang berlokasi di Jl Bhakti IV/1 Komplek Pajak Kemanggisan ini menjadi sekolah favorit di Jakarta Barat karena sumberdaya dan lokasinya yang strategis Dengan luas lahan lebih dari 10 ribu meter persegi dan saran laboratorium olahraga dan pendukung lainnya yang lengkap menjadi pusatkegiatan guru (PKG) utuk mata pelajaran sains Pilihan orangtua dan siswa untuk belajar di SMA Negeri 78 beralasan dengan kondisinya yang sangat kondusif Sebagai sekolah favorit terbukti dengan prestasinya yang menonjol baik pada bidang akademik maupun non akademik Untuk pertama kalinya Indoesia mengirimkan utusan pada Olimpiade Fisika Internasional tahun 1993 merupakan wakil dari siswa SMA 78 yaitu Oky Gunawan Sejak saat itu prestasi sekolah terus bertahan dan dikembangkan pada seluruh elemen sekolah termasuk guru dan pegawai Pada Tahun 2002 SMA Negeri 78 menerapkan kurikulum berbasis kompetensi (KBK) atas inisiatp sendiri Dengan pelaksnaaan mandiri KBK di sekolah pimpinan dan guru berupaya melaksanakan model pebelajaran yang kreatif aktif dan memaksimalkan pemberdayaan siswa dalam aktifitas pembelajaran Pada Tahun 2005 ditetapkan sebagai Sekolah Nasional Plus/Internasional membuka kelas internasional yang berafiliasi dengan UCIE sejak tahun 2006 bersamaan dengan penetapan sebagai RSBI (Rintisan Sekolah Bertaraf Internasional) Mulai tahun 2007 menerapkan sistem kredit semester (SKS) dengan sistem belajar Subject Based Classroom dan berbasis ICT Sejak tahun 2008 menjadi penyelenggara ujian internasional dari UCIE (University of Cambrridge International Examination) dengan ID 103.', '5dbd1ed56962f.jpg');
+(1, 'Sejarah Smk Muhammadiyah Wanasari', 'Berdiri sejak tahun 1975 semula adalah SMPP35 menjadi SMA Negeri 78 sejak tahun 1984 Sekolah yang berlokasi di Jl Bhakti IV/1 Komplek Pajak Kemanggisan ini menjadi sekolah favorit di Jakarta Barat karena sumberdaya dan lokasinya yang strategis Dengan luas lahan lebih dari 10 ribu meter persegi dan saran laboratorium olahraga dan pendukung lainnya yang lengkap menjadi pusatkegiatan guru (PKG) utuk mata pelajaran sains Pilihan orangtua dan siswa untuk belajar di SMA Negeri 78 beralasan dengan kondisinya yang sangat kondusif Sebagai sekolah favorit terbukti dengan prestasinya yang menonjol baik pada bidang akademik maupun non akademik Untuk pertama kalinya Indoesia mengirimkan utusan pada Olimpiade Fisika Internasional tahun 1993 merupakan wakil dari siswa SMA 78 yaitu Oky Gunawan Sejak saat itu prestasi sekolah terus bertahan dan dikembangkan pada seluruh elemen sekolah termasuk guru dan pegawai Pada Tahun 2002 SMA Negeri 78 menerapkan kurikulum berbasis kompetensi (KBK) atas inisiatp sendiri Dengan pelaksnaaan mandiri KBK di sekolah pimpinan dan guru berupaya melaksanakan model pebelajaran yang kreatif aktif dan memaksimalkan pemberdayaan siswa dalam aktifitas pembelajaran Pada Tahun 2005 ditetapkan sebagai Sekolah Nasional Plus/Internasional membuka kelas internasional yang berafiliasi dengan UCIE sejak tahun 2006 bersamaan dengan penetapan sebagai RSBI (Rintisan Sekolah Bertaraf Internasional) Mulai tahun 2007 menerapkan sistem kredit semester (SKS) dengan sistem belajar Subject Based Classroom dan berbasis ICT Sejak tahun 2008 menjadi penyelenggara ujian internasional dari UCIE (University of Cambrridge International Examination) dengan ID 103.', '688287d2c1280.jpeg');
 
 -- --------------------------------------------------------
 
@@ -269,9 +274,9 @@ INSERT INTO `sejarah` (`id`, `judul_sejarah`, `isi_sejarah`, `gambar`) VALUES
 --
 
 CREATE TABLE `siswa` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `kelas` varchar(200) NOT NULL,
-  `jumlah` int(200) NOT NULL,
+  `jumlah` int NOT NULL,
   `jenis` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -291,7 +296,7 @@ INSERT INTO `siswa` (`id`, `kelas`, `jumlah`, `jenis`) VALUES
 --
 
 CREATE TABLE `staf` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `staf` varchar(200) NOT NULL,
   `foto` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -309,11 +314,34 @@ INSERT INTO `staf` (`id`, `staf`, `foto`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `role` enum('admin','guru','siswa') NOT NULL DEFAULT 'siswa',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `foto` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`, `role`, `created_at`, `foto`) VALUES
+(10, 'admin', '$2y$10$Yi1f.woM94ADFWRKq3ZDqu.GDdxIN7gA/3dBzEGOdWYQwZRGv4d4m', 'admin', '2025-07-25 00:08:18', '6882cfbdc6416.jpg'),
+(14, 'meisya wulandari putri', '$2y$10$46Xw3fdBhON4bKtk0xPc7uHfVLlJg4RXGyjOXvf.KYepxcP4TeIK6', 'admin', '2025-07-25 00:39:52', '6882d25885be7.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `visimisi`
 --
 
 CREATE TABLE `visimisi` (
-  `id` int(11) NOT NULL,
+  `id` int NOT NULL,
   `visimisi` varchar(200) NOT NULL,
   `isi` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -329,12 +357,6 @@ INSERT INTO `visimisi` (`id`, `visimisi`, `isi`) VALUES
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `berita`
@@ -379,6 +401,12 @@ ALTER TABLE `kepsek`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `pengaturan`
+--
+ALTER TABLE `pengaturan`
+  ADD PRIMARY KEY (`id_pengaturan`);
+
+--
 -- Indexes for table `saranaprasarana`
 --
 ALTER TABLE `saranaprasarana`
@@ -403,6 +431,13 @@ ALTER TABLE `staf`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
+
+--
 -- Indexes for table `visimisi`
 --
 ALTER TABLE `visimisi`
@@ -413,82 +448,88 @@ ALTER TABLE `visimisi`
 --
 
 --
--- AUTO_INCREMENT for table `admin`
---
-ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
 -- AUTO_INCREMENT for table `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `blog`
 --
 ALTER TABLE `blog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `eskul`
 --
 ALTER TABLE `eskul`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `galeri`
 --
 ALTER TABLE `galeri`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `guru`
 --
 ALTER TABLE `guru`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `home`
 --
 ALTER TABLE `home`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `kepsek`
 --
 ALTER TABLE `kepsek`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `pengaturan`
+--
+ALTER TABLE `pengaturan`
+  MODIFY `id_pengaturan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `saranaprasarana`
 --
 ALTER TABLE `saranaprasarana`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `sejarah`
 --
 ALTER TABLE `sejarah`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `staf`
 --
 ALTER TABLE `staf`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `visimisi`
 --
 ALTER TABLE `visimisi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
